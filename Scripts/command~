@@ -1,0 +1,3 @@
+sudo mkfs -t ext4 /dev/xvdb;sudo mkdir -p /mnt/raid;sudo mount /dev/xvdb  /mnt/raid;cd /mnt/raid;sudo mkdir spark hadoop;sudo chown -R ec2-user:ec2-user /mnt/raid/spark;sudo chown -R ec2-user:ec2-user /mnt/raid/hadoop;ssh-keygen -t dsa -P "" -f ~/.ssh/id_dsa ;cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys 
+
+

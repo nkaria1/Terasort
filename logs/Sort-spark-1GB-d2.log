@@ -1,0 +1,650 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/03/25 04:14:48 INFO SparkContext: Running Spark version 1.6.1
+16/03/25 04:14:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/03/25 04:14:49 WARN SparkConf: 
+SPARK_WORKER_INSTANCES was detected (set to '4').
+This is deprecated in Spark 1.0+.
+
+Please instead use:
+ - ./spark-submit with --num-executors to specify the number of executors
+ - Or set SPARK_EXECUTOR_INSTANCES
+ - spark.executor.instances to configure the number of instances in the spark config.
+        
+16/03/25 04:14:49 INFO SecurityManager: Changing view acls to: ec2-user
+16/03/25 04:14:49 INFO SecurityManager: Changing modify acls to: ec2-user
+16/03/25 04:14:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ec2-user); users with modify permissions: Set(ec2-user)
+16/03/25 04:14:49 INFO Utils: Successfully started service 'sparkDriver' on port 42939.
+16/03/25 04:14:50 INFO Slf4jLogger: Slf4jLogger started
+16/03/25 04:14:50 INFO Remoting: Starting remoting
+16/03/25 04:14:50 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@172.31.34.248:40771]
+16/03/25 04:14:50 INFO Utils: Successfully started service 'sparkDriverActorSystem' on port 40771.
+16/03/25 04:14:50 INFO SparkEnv: Registering MapOutputTracker
+16/03/25 04:14:50 INFO SparkEnv: Registering BlockManagerMaster
+16/03/25 04:14:50 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2734ab6b-731c-470b-875c-c5c60a8d52a3
+16/03/25 04:14:50 INFO MemoryStore: MemoryStore started with capacity 511.5 MB
+16/03/25 04:14:50 INFO SparkEnv: Registering OutputCommitCoordinator
+16/03/25 04:14:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/03/25 04:14:50 INFO SparkUI: Started SparkUI at http://172.31.34.248:4040
+16/03/25 04:14:50 INFO HttpFileServer: HTTP File server directory is /tmp/spark-c78f9781-fa2c-4c63-ba47-a4c0d2dc8d19/httpd-5463cf0a-465d-4602-99fd-e75286c839e1
+16/03/25 04:14:50 INFO HttpServer: Starting HTTP Server
+16/03/25 04:14:50 INFO Utils: Successfully started service 'HTTP file server' on port 46356.
+16/03/25 04:14:50 INFO SparkContext: Added JAR file:/home/ec2-user/Workspace/Spark_Sort/target/Spark_Sort-0.0.1-SNAPSHOT.jar at http://172.31.34.248:46356/jars/Spark_Sort-0.0.1-SNAPSHOT.jar with timestamp 1458879290629
+16/03/25 04:14:50 INFO Executor: Starting executor ID driver on host localhost
+16/03/25 04:14:50 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35289.
+16/03/25 04:14:50 INFO NettyBlockTransferService: Server created on 35289
+16/03/25 04:14:50 INFO BlockManagerMaster: Trying to register BlockManager
+16/03/25 04:14:50 INFO BlockManagerMasterEndpoint: Registering block manager localhost:35289 with 511.5 MB RAM, BlockManagerId(driver, localhost, 35289)
+16/03/25 04:14:50 INFO BlockManagerMaster: Registered BlockManager
+16/03/25 04:14:51 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 153.6 KB, free 153.6 KB)
+16/03/25 04:14:51 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 13.9 KB, free 167.5 KB)
+16/03/25 04:14:51 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:35289 (size: 13.9 KB, free: 511.5 MB)
+16/03/25 04:14:51 INFO SparkContext: Created broadcast 0 from textFile at Spark_Sort.java:23
+16/03/25 04:14:51 INFO FileInputFormat: Total input paths to process : 1
+16/03/25 04:14:51 INFO SparkContext: Starting job: sortByKey at Spark_Sort.java:53
+16/03/25 04:14:51 INFO DAGScheduler: Got job 0 (sortByKey at Spark_Sort.java:53) with 30 output partitions
+16/03/25 04:14:51 INFO DAGScheduler: Final stage: ResultStage 0 (sortByKey at Spark_Sort.java:53)
+16/03/25 04:14:51 INFO DAGScheduler: Parents of final stage: List()
+16/03/25 04:14:51 INFO DAGScheduler: Missing parents: List()
+16/03/25 04:14:51 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[4] at sortByKey at Spark_Sort.java:53), which has no missing parents
+16/03/25 04:14:51 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 171.6 KB)
+16/03/25 04:14:51 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 174.0 KB)
+16/03/25 04:14:51 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:35289 (size: 2.3 KB, free: 511.5 MB)
+16/03/25 04:14:51 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+16/03/25 04:14:51 INFO DAGScheduler: Submitting 30 missing tasks from ResultStage 0 (MapPartitionsRDD[4] at sortByKey at Spark_Sort.java:53)
+16/03/25 04:14:51 INFO TaskSchedulerImpl: Adding task set 0.0 with 30 tasks
+16/03/25 04:14:51 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:51 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/03/25 04:14:51 INFO Executor: Fetching http://172.31.34.248:46356/jars/Spark_Sort-0.0.1-SNAPSHOT.jar with timestamp 1458879290629
+16/03/25 04:14:51 INFO Utils: Fetching http://172.31.34.248:46356/jars/Spark_Sort-0.0.1-SNAPSHOT.jar to /tmp/spark-c78f9781-fa2c-4c63-ba47-a4c0d2dc8d19/userFiles-0826a1b5-8f10-4c5a-8bda-afb97556c29f/fetchFileTemp8918622700502825969.tmp
+16/03/25 04:14:51 INFO Executor: Adding file:/tmp/spark-c78f9781-fa2c-4c63-ba47-a4c0d2dc8d19/userFiles-0826a1b5-8f10-4c5a-8bda-afb97556c29f/Spark_Sort-0.0.1-SNAPSHOT.jar to class loader
+16/03/25 04:14:51 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:0+33554432
+16/03/25 04:14:51 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/03/25 04:14:51 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/03/25 04:14:51 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/03/25 04:14:51 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/03/25 04:14:51 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/03/25 04:14:52 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 3068 bytes result sent to driver
+16/03/25 04:14:52 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:52 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/03/25 04:14:52 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 503 ms on localhost (1/30)
+16/03/25 04:14:52 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:33554432+33554432
+16/03/25 04:14:52 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 3068 bytes result sent to driver
+16/03/25 04:14:52 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, partition 2,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:52 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/03/25 04:14:52 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 190 ms on localhost (2/30)
+16/03/25 04:14:52 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:67108864+33554432
+16/03/25 04:14:52 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 3068 bytes result sent to driver
+16/03/25 04:14:52 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, localhost, partition 3,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:52 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+16/03/25 04:14:52 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 158 ms on localhost (3/30)
+16/03/25 04:14:52 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:100663296+33554432
+16/03/25 04:14:52 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 3068 bytes result sent to driver
+16/03/25 04:14:52 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4, localhost, partition 4,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:52 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+16/03/25 04:14:52 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 156 ms on localhost (4/30)
+16/03/25 04:14:52 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:134217728+33554432
+16/03/25 04:14:52 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 3068 bytes result sent to driver
+16/03/25 04:14:52 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, localhost, partition 5,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:52 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+16/03/25 04:14:52 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 151 ms on localhost (5/30)
+16/03/25 04:14:52 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:167772160+33554432
+16/03/25 04:14:52 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 3068 bytes result sent to driver
+16/03/25 04:14:52 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6, localhost, partition 6,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:52 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+16/03/25 04:14:52 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 152 ms on localhost (6/30)
+16/03/25 04:14:52 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:201326592+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7, localhost, partition 7,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 145 ms on localhost (7/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:234881024+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8, localhost, partition 8,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 141 ms on localhost (8/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:268435456+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9, localhost, partition 9,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 139 ms on localhost (9/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:301989888+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10, localhost, partition 10,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 138 ms on localhost (10/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:335544320+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11, localhost, partition 11,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 137 ms on localhost (11/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:369098752+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12, localhost, partition 12,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 12.0 in stage 0.0 (TID 12)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 139 ms on localhost (12/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:402653184+33554432
+16/03/25 04:14:53 INFO Executor: Finished task 12.0 in stage 0.0 (TID 12). 3068 bytes result sent to driver
+16/03/25 04:14:53 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13, localhost, partition 13,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:53 INFO Executor: Running task 13.0 in stage 0.0 (TID 13)
+16/03/25 04:14:53 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 137 ms on localhost (13/30)
+16/03/25 04:14:53 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:436207616+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 13.0 in stage 0.0 (TID 13). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14, localhost, partition 14,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 14.0 in stage 0.0 (TID 14)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 138 ms on localhost (14/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:469762048+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 14.0 in stage 0.0 (TID 14). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15, localhost, partition 15,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 15.0 in stage 0.0 (TID 15)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 137 ms on localhost (15/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:503316480+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 15.0 in stage 0.0 (TID 15). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 16.0 in stage 0.0 (TID 16, localhost, partition 16,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 16.0 in stage 0.0 (TID 16)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 141 ms on localhost (16/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:536870912+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 16.0 in stage 0.0 (TID 16). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 17.0 in stage 0.0 (TID 17, localhost, partition 17,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 17.0 in stage 0.0 (TID 17)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 16.0 in stage 0.0 (TID 16) in 136 ms on localhost (17/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:570425344+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 17.0 in stage 0.0 (TID 17). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 18.0 in stage 0.0 (TID 18, localhost, partition 18,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 18.0 in stage 0.0 (TID 18)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 17.0 in stage 0.0 (TID 17) in 137 ms on localhost (18/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:603979776+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 18.0 in stage 0.0 (TID 18). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 19.0 in stage 0.0 (TID 19, localhost, partition 19,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 19.0 in stage 0.0 (TID 19)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 18.0 in stage 0.0 (TID 18) in 136 ms on localhost (19/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:637534208+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 19.0 in stage 0.0 (TID 19). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 20.0 in stage 0.0 (TID 20, localhost, partition 20,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 20.0 in stage 0.0 (TID 20)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 19.0 in stage 0.0 (TID 19) in 148 ms on localhost (20/30)
+16/03/25 04:14:54 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:671088640+33554432
+16/03/25 04:14:54 INFO Executor: Finished task 20.0 in stage 0.0 (TID 20). 3068 bytes result sent to driver
+16/03/25 04:14:54 INFO TaskSetManager: Starting task 21.0 in stage 0.0 (TID 21, localhost, partition 21,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:54 INFO Executor: Running task 21.0 in stage 0.0 (TID 21)
+16/03/25 04:14:54 INFO TaskSetManager: Finished task 20.0 in stage 0.0 (TID 20) in 133 ms on localhost (21/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:704643072+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 21.0 in stage 0.0 (TID 21). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 22.0 in stage 0.0 (TID 22, localhost, partition 22,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 22.0 in stage 0.0 (TID 22)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 21.0 in stage 0.0 (TID 21) in 132 ms on localhost (22/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:738197504+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 22.0 in stage 0.0 (TID 22). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 23.0 in stage 0.0 (TID 23, localhost, partition 23,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 23.0 in stage 0.0 (TID 23)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 22.0 in stage 0.0 (TID 22) in 133 ms on localhost (23/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:771751936+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 23.0 in stage 0.0 (TID 23). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 24.0 in stage 0.0 (TID 24, localhost, partition 24,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 24.0 in stage 0.0 (TID 24)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 23.0 in stage 0.0 (TID 23) in 135 ms on localhost (24/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:805306368+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 24.0 in stage 0.0 (TID 24). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 25.0 in stage 0.0 (TID 25, localhost, partition 25,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 25.0 in stage 0.0 (TID 25)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 24.0 in stage 0.0 (TID 24) in 133 ms on localhost (25/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:838860800+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 25.0 in stage 0.0 (TID 25). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 26.0 in stage 0.0 (TID 26, localhost, partition 26,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 26.0 in stage 0.0 (TID 26)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 25.0 in stage 0.0 (TID 25) in 131 ms on localhost (26/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:872415232+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 26.0 in stage 0.0 (TID 26). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 27.0 in stage 0.0 (TID 27, localhost, partition 27,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 27.0 in stage 0.0 (TID 27)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 26.0 in stage 0.0 (TID 26) in 133 ms on localhost (27/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:905969664+33554432
+16/03/25 04:14:55 INFO Executor: Finished task 27.0 in stage 0.0 (TID 27). 3068 bytes result sent to driver
+16/03/25 04:14:55 INFO TaskSetManager: Starting task 28.0 in stage 0.0 (TID 28, localhost, partition 28,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:55 INFO Executor: Running task 28.0 in stage 0.0 (TID 28)
+16/03/25 04:14:55 INFO TaskSetManager: Finished task 27.0 in stage 0.0 (TID 27) in 133 ms on localhost (28/30)
+16/03/25 04:14:55 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:939524096+33554432
+16/03/25 04:14:56 INFO Executor: Finished task 28.0 in stage 0.0 (TID 28). 3068 bytes result sent to driver
+16/03/25 04:14:56 INFO TaskSetManager: Starting task 29.0 in stage 0.0 (TID 29, localhost, partition 29,PROCESS_LOCAL, 2206 bytes)
+16/03/25 04:14:56 INFO Executor: Running task 29.0 in stage 0.0 (TID 29)
+16/03/25 04:14:56 INFO TaskSetManager: Finished task 28.0 in stage 0.0 (TID 28) in 133 ms on localhost (29/30)
+16/03/25 04:14:56 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:973078528+26921472
+16/03/25 04:14:56 INFO Executor: Finished task 29.0 in stage 0.0 (TID 29). 3068 bytes result sent to driver
+16/03/25 04:14:56 INFO TaskSetManager: Finished task 29.0 in stage 0.0 (TID 29) in 110 ms on localhost (30/30)
+16/03/25 04:14:56 INFO DAGScheduler: ResultStage 0 (sortByKey at Spark_Sort.java:53) finished in 4.509 s
+16/03/25 04:14:56 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/03/25 04:14:56 INFO DAGScheduler: Job 0 finished: sortByKey at Spark_Sort.java:53, took 4.599920 s
+16/03/25 04:14:56 INFO SparkContext: Starting job: saveAsTextFile at Spark_Sort.java:53
+16/03/25 04:14:56 INFO DAGScheduler: Registering RDD 2 (mapToPair at Spark_Sort.java:48)
+16/03/25 04:14:56 INFO DAGScheduler: Got job 1 (saveAsTextFile at Spark_Sort.java:53) with 30 output partitions
+16/03/25 04:14:56 INFO DAGScheduler: Final stage: ResultStage 2 (saveAsTextFile at Spark_Sort.java:53)
+16/03/25 04:14:56 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+16/03/25 04:14:56 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+16/03/25 04:14:56 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[2] at mapToPair at Spark_Sort.java:48), which has no missing parents
+16/03/25 04:14:56 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.1 KB, free 179.0 KB)
+16/03/25 04:14:56 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.1 KB, free 182.1 KB)
+16/03/25 04:14:56 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:35289 (size: 3.1 KB, free: 511.5 MB)
+16/03/25 04:14:56 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+16/03/25 04:14:56 INFO DAGScheduler: Submitting 30 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[2] at mapToPair at Spark_Sort.java:48)
+16/03/25 04:14:56 INFO TaskSchedulerImpl: Adding task set 1.0 with 30 tasks
+16/03/25 04:14:56 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 30, localhost, partition 0,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:14:56 INFO Executor: Running task 0.0 in stage 1.0 (TID 30)
+16/03/25 04:14:56 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:0+33554432
+16/03/25 04:14:57 INFO Executor: Finished task 0.0 in stage 1.0 (TID 30). 2282 bytes result sent to driver
+16/03/25 04:14:57 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 31, localhost, partition 1,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:14:57 INFO Executor: Running task 1.0 in stage 1.0 (TID 31)
+16/03/25 04:14:57 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 30) in 916 ms on localhost (1/30)
+16/03/25 04:14:57 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:33554432+33554432
+16/03/25 04:14:58 INFO Executor: Finished task 1.0 in stage 1.0 (TID 31). 2282 bytes result sent to driver
+16/03/25 04:14:58 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 32, localhost, partition 2,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:14:58 INFO Executor: Running task 2.0 in stage 1.0 (TID 32)
+16/03/25 04:14:58 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 31) in 813 ms on localhost (2/30)
+16/03/25 04:14:58 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:67108864+33554432
+16/03/25 04:14:58 INFO Executor: Finished task 2.0 in stage 1.0 (TID 32). 2282 bytes result sent to driver
+16/03/25 04:14:58 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 33, localhost, partition 3,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:14:58 INFO Executor: Running task 3.0 in stage 1.0 (TID 33)
+16/03/25 04:14:58 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 32) in 744 ms on localhost (3/30)
+16/03/25 04:14:58 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:100663296+33554432
+16/03/25 04:14:59 INFO Executor: Finished task 3.0 in stage 1.0 (TID 33). 2282 bytes result sent to driver
+16/03/25 04:14:59 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 34, localhost, partition 4,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:14:59 INFO Executor: Running task 4.0 in stage 1.0 (TID 34)
+16/03/25 04:14:59 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 33) in 744 ms on localhost (4/30)
+16/03/25 04:14:59 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:134217728+33554432
+16/03/25 04:15:00 INFO Executor: Finished task 4.0 in stage 1.0 (TID 34). 2282 bytes result sent to driver
+16/03/25 04:15:00 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 35, localhost, partition 5,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:00 INFO Executor: Running task 5.0 in stage 1.0 (TID 35)
+16/03/25 04:15:00 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 34) in 746 ms on localhost (5/30)
+16/03/25 04:15:00 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:167772160+33554432
+16/03/25 04:15:01 INFO Executor: Finished task 5.0 in stage 1.0 (TID 35). 2282 bytes result sent to driver
+16/03/25 04:15:01 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 36, localhost, partition 6,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:01 INFO Executor: Running task 6.0 in stage 1.0 (TID 36)
+16/03/25 04:15:01 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 35) in 744 ms on localhost (6/30)
+16/03/25 04:15:01 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:201326592+33554432
+16/03/25 04:15:01 INFO Executor: Finished task 6.0 in stage 1.0 (TID 36). 2282 bytes result sent to driver
+16/03/25 04:15:01 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 37, localhost, partition 7,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:01 INFO Executor: Running task 7.0 in stage 1.0 (TID 37)
+16/03/25 04:15:01 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 36) in 743 ms on localhost (7/30)
+16/03/25 04:15:01 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:234881024+33554432
+16/03/25 04:15:02 INFO Executor: Finished task 7.0 in stage 1.0 (TID 37). 2282 bytes result sent to driver
+16/03/25 04:15:02 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 38, localhost, partition 8,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:02 INFO Executor: Running task 8.0 in stage 1.0 (TID 38)
+16/03/25 04:15:02 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 37) in 739 ms on localhost (8/30)
+16/03/25 04:15:02 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:268435456+33554432
+16/03/25 04:15:03 INFO Executor: Finished task 8.0 in stage 1.0 (TID 38). 2282 bytes result sent to driver
+16/03/25 04:15:03 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 39, localhost, partition 9,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:03 INFO Executor: Running task 9.0 in stage 1.0 (TID 39)
+16/03/25 04:15:03 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 38) in 746 ms on localhost (9/30)
+16/03/25 04:15:03 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:301989888+33554432
+16/03/25 04:15:03 INFO Executor: Finished task 9.0 in stage 1.0 (TID 39). 2282 bytes result sent to driver
+16/03/25 04:15:03 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 40, localhost, partition 10,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:03 INFO Executor: Running task 10.0 in stage 1.0 (TID 40)
+16/03/25 04:15:03 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 39) in 737 ms on localhost (10/30)
+16/03/25 04:15:03 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:335544320+33554432
+16/03/25 04:15:04 INFO Executor: Finished task 10.0 in stage 1.0 (TID 40). 2282 bytes result sent to driver
+16/03/25 04:15:04 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 41, localhost, partition 11,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:04 INFO Executor: Running task 11.0 in stage 1.0 (TID 41)
+16/03/25 04:15:04 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 40) in 735 ms on localhost (11/30)
+16/03/25 04:15:04 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:369098752+33554432
+16/03/25 04:15:05 INFO Executor: Finished task 11.0 in stage 1.0 (TID 41). 2282 bytes result sent to driver
+16/03/25 04:15:05 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 42, localhost, partition 12,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:05 INFO Executor: Running task 12.0 in stage 1.0 (TID 42)
+16/03/25 04:15:05 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 41) in 735 ms on localhost (12/30)
+16/03/25 04:15:05 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:402653184+33554432
+16/03/25 04:15:06 INFO Executor: Finished task 12.0 in stage 1.0 (TID 42). 2282 bytes result sent to driver
+16/03/25 04:15:06 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 43, localhost, partition 13,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:06 INFO Executor: Running task 13.0 in stage 1.0 (TID 43)
+16/03/25 04:15:06 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 42) in 740 ms on localhost (13/30)
+16/03/25 04:15:06 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:436207616+33554432
+16/03/25 04:15:06 INFO Executor: Finished task 13.0 in stage 1.0 (TID 43). 2282 bytes result sent to driver
+16/03/25 04:15:06 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 44, localhost, partition 14,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:06 INFO Executor: Running task 14.0 in stage 1.0 (TID 44)
+16/03/25 04:15:06 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 43) in 740 ms on localhost (14/30)
+16/03/25 04:15:06 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:469762048+33554432
+16/03/25 04:15:07 INFO Executor: Finished task 14.0 in stage 1.0 (TID 44). 2282 bytes result sent to driver
+16/03/25 04:15:07 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 45, localhost, partition 15,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:07 INFO Executor: Running task 15.0 in stage 1.0 (TID 45)
+16/03/25 04:15:07 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 44) in 735 ms on localhost (15/30)
+16/03/25 04:15:07 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:503316480+33554432
+16/03/25 04:15:08 INFO Executor: Finished task 15.0 in stage 1.0 (TID 45). 2282 bytes result sent to driver
+16/03/25 04:15:08 INFO TaskSetManager: Starting task 16.0 in stage 1.0 (TID 46, localhost, partition 16,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:08 INFO Executor: Running task 16.0 in stage 1.0 (TID 46)
+16/03/25 04:15:08 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 45) in 740 ms on localhost (16/30)
+16/03/25 04:15:08 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:536870912+33554432
+16/03/25 04:15:09 INFO Executor: Finished task 16.0 in stage 1.0 (TID 46). 2282 bytes result sent to driver
+16/03/25 04:15:09 INFO TaskSetManager: Starting task 17.0 in stage 1.0 (TID 47, localhost, partition 17,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:09 INFO Executor: Running task 17.0 in stage 1.0 (TID 47)
+16/03/25 04:15:09 INFO TaskSetManager: Finished task 16.0 in stage 1.0 (TID 46) in 737 ms on localhost (17/30)
+16/03/25 04:15:09 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:570425344+33554432
+16/03/25 04:15:09 INFO Executor: Finished task 17.0 in stage 1.0 (TID 47). 2282 bytes result sent to driver
+16/03/25 04:15:09 INFO TaskSetManager: Starting task 18.0 in stage 1.0 (TID 48, localhost, partition 18,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:09 INFO Executor: Running task 18.0 in stage 1.0 (TID 48)
+16/03/25 04:15:09 INFO TaskSetManager: Finished task 17.0 in stage 1.0 (TID 47) in 754 ms on localhost (18/30)
+16/03/25 04:15:09 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:603979776+33554432
+16/03/25 04:15:10 INFO Executor: Finished task 18.0 in stage 1.0 (TID 48). 2282 bytes result sent to driver
+16/03/25 04:15:10 INFO TaskSetManager: Starting task 19.0 in stage 1.0 (TID 49, localhost, partition 19,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:10 INFO Executor: Running task 19.0 in stage 1.0 (TID 49)
+16/03/25 04:15:10 INFO TaskSetManager: Finished task 18.0 in stage 1.0 (TID 48) in 736 ms on localhost (19/30)
+16/03/25 04:15:10 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:637534208+33554432
+16/03/25 04:15:11 INFO Executor: Finished task 19.0 in stage 1.0 (TID 49). 2282 bytes result sent to driver
+16/03/25 04:15:11 INFO TaskSetManager: Starting task 20.0 in stage 1.0 (TID 50, localhost, partition 20,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:11 INFO Executor: Running task 20.0 in stage 1.0 (TID 50)
+16/03/25 04:15:11 INFO TaskSetManager: Finished task 19.0 in stage 1.0 (TID 49) in 737 ms on localhost (20/30)
+16/03/25 04:15:11 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:671088640+33554432
+16/03/25 04:15:12 INFO Executor: Finished task 20.0 in stage 1.0 (TID 50). 2282 bytes result sent to driver
+16/03/25 04:15:12 INFO TaskSetManager: Starting task 21.0 in stage 1.0 (TID 51, localhost, partition 21,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:12 INFO TaskSetManager: Finished task 20.0 in stage 1.0 (TID 50) in 740 ms on localhost (21/30)
+16/03/25 04:15:12 INFO Executor: Running task 21.0 in stage 1.0 (TID 51)
+16/03/25 04:15:12 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:704643072+33554432
+16/03/25 04:15:12 INFO Executor: Finished task 21.0 in stage 1.0 (TID 51). 2282 bytes result sent to driver
+16/03/25 04:15:12 INFO TaskSetManager: Starting task 22.0 in stage 1.0 (TID 52, localhost, partition 22,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:12 INFO Executor: Running task 22.0 in stage 1.0 (TID 52)
+16/03/25 04:15:12 INFO TaskSetManager: Finished task 21.0 in stage 1.0 (TID 51) in 727 ms on localhost (22/30)
+16/03/25 04:15:12 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:738197504+33554432
+16/03/25 04:15:13 INFO Executor: Finished task 22.0 in stage 1.0 (TID 52). 2282 bytes result sent to driver
+16/03/25 04:15:13 INFO TaskSetManager: Starting task 23.0 in stage 1.0 (TID 53, localhost, partition 23,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:13 INFO Executor: Running task 23.0 in stage 1.0 (TID 53)
+16/03/25 04:15:13 INFO TaskSetManager: Finished task 22.0 in stage 1.0 (TID 52) in 735 ms on localhost (23/30)
+16/03/25 04:15:13 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:771751936+33554432
+16/03/25 04:15:14 INFO Executor: Finished task 23.0 in stage 1.0 (TID 53). 2282 bytes result sent to driver
+16/03/25 04:15:14 INFO TaskSetManager: Starting task 24.0 in stage 1.0 (TID 54, localhost, partition 24,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:14 INFO Executor: Running task 24.0 in stage 1.0 (TID 54)
+16/03/25 04:15:14 INFO TaskSetManager: Finished task 23.0 in stage 1.0 (TID 53) in 730 ms on localhost (24/30)
+16/03/25 04:15:14 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:805306368+33554432
+16/03/25 04:15:15 INFO Executor: Finished task 24.0 in stage 1.0 (TID 54). 2282 bytes result sent to driver
+16/03/25 04:15:15 INFO TaskSetManager: Starting task 25.0 in stage 1.0 (TID 55, localhost, partition 25,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:15 INFO Executor: Running task 25.0 in stage 1.0 (TID 55)
+16/03/25 04:15:15 INFO TaskSetManager: Finished task 24.0 in stage 1.0 (TID 54) in 732 ms on localhost (25/30)
+16/03/25 04:15:15 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:838860800+33554432
+16/03/25 04:15:15 INFO Executor: Finished task 25.0 in stage 1.0 (TID 55). 2282 bytes result sent to driver
+16/03/25 04:15:15 INFO TaskSetManager: Starting task 26.0 in stage 1.0 (TID 56, localhost, partition 26,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:15 INFO Executor: Running task 26.0 in stage 1.0 (TID 56)
+16/03/25 04:15:15 INFO TaskSetManager: Finished task 25.0 in stage 1.0 (TID 55) in 739 ms on localhost (26/30)
+16/03/25 04:15:15 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:872415232+33554432
+16/03/25 04:15:16 INFO Executor: Finished task 26.0 in stage 1.0 (TID 56). 2282 bytes result sent to driver
+16/03/25 04:15:16 INFO TaskSetManager: Starting task 27.0 in stage 1.0 (TID 57, localhost, partition 27,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:16 INFO Executor: Running task 27.0 in stage 1.0 (TID 57)
+16/03/25 04:15:16 INFO TaskSetManager: Finished task 26.0 in stage 1.0 (TID 56) in 734 ms on localhost (27/30)
+16/03/25 04:15:16 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:905969664+33554432
+16/03/25 04:15:17 INFO Executor: Finished task 27.0 in stage 1.0 (TID 57). 2282 bytes result sent to driver
+16/03/25 04:15:17 INFO TaskSetManager: Starting task 28.0 in stage 1.0 (TID 58, localhost, partition 28,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:17 INFO Executor: Running task 28.0 in stage 1.0 (TID 58)
+16/03/25 04:15:17 INFO TaskSetManager: Finished task 27.0 in stage 1.0 (TID 57) in 733 ms on localhost (28/30)
+16/03/25 04:15:17 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:939524096+33554432
+16/03/25 04:15:17 INFO Executor: Finished task 28.0 in stage 1.0 (TID 58). 2282 bytes result sent to driver
+16/03/25 04:15:17 INFO TaskSetManager: Starting task 29.0 in stage 1.0 (TID 59, localhost, partition 29,PROCESS_LOCAL, 2195 bytes)
+16/03/25 04:15:17 INFO Executor: Running task 29.0 in stage 1.0 (TID 59)
+16/03/25 04:15:17 INFO TaskSetManager: Finished task 28.0 in stage 1.0 (TID 58) in 736 ms on localhost (29/30)
+16/03/25 04:15:17 INFO HadoopRDD: Input split: file:/home/ec2-user/Workspace/1GB:973078528+26921472
+16/03/25 04:15:18 INFO Executor: Finished task 29.0 in stage 1.0 (TID 59). 2282 bytes result sent to driver
+16/03/25 04:15:18 INFO TaskSetManager: Finished task 29.0 in stage 1.0 (TID 59) in 595 ms on localhost (30/30)
+16/03/25 04:15:18 INFO DAGScheduler: ShuffleMapStage 1 (mapToPair at Spark_Sort.java:48) finished in 22.232 s
+16/03/25 04:15:18 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+16/03/25 04:15:18 INFO DAGScheduler: looking for newly runnable stages
+16/03/25 04:15:18 INFO DAGScheduler: running: Set()
+16/03/25 04:15:18 INFO DAGScheduler: waiting: Set(ResultStage 2)
+16/03/25 04:15:18 INFO DAGScheduler: failed: Set()
+16/03/25 04:15:18 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[6] at saveAsTextFile at Spark_Sort.java:53), which has no missing parents
+16/03/25 04:15:18 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 65.4 KB, free 247.5 KB)
+16/03/25 04:15:18 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 23.0 KB, free 270.6 KB)
+16/03/25 04:15:18 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:35289 (size: 23.0 KB, free: 511.5 MB)
+16/03/25 04:15:18 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1006
+16/03/25 04:15:18 INFO DAGScheduler: Submitting 30 missing tasks from ResultStage 2 (MapPartitionsRDD[6] at saveAsTextFile at Spark_Sort.java:53)
+16/03/25 04:15:18 INFO TaskSchedulerImpl: Adding task set 2.0 with 30 tasks
+16/03/25 04:15:18 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 60, localhost, partition 0,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:18 INFO Executor: Running task 0.0 in stage 2.0 (TID 60)
+16/03/25 04:15:18 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:18 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+16/03/25 04:15:20 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000000_60' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000000
+16/03/25 04:15:20 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000000_60: Committed
+16/03/25 04:15:20 INFO Executor: Finished task 0.0 in stage 2.0 (TID 60). 2080 bytes result sent to driver
+16/03/25 04:15:20 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 61, localhost, partition 1,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:20 INFO Executor: Running task 1.0 in stage 2.0 (TID 61)
+16/03/25 04:15:20 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 60) in 1683 ms on localhost (1/30)
+16/03/25 04:15:20 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:21 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000001_61' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000001
+16/03/25 04:15:21 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000001_61: Committed
+16/03/25 04:15:21 INFO Executor: Finished task 1.0 in stage 2.0 (TID 61). 2080 bytes result sent to driver
+16/03/25 04:15:21 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 62, localhost, partition 2,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:21 INFO Executor: Running task 2.0 in stage 2.0 (TID 62)
+16/03/25 04:15:21 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 61) in 1280 ms on localhost (2/30)
+16/03/25 04:15:21 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:21 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:22 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000002_62' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000002
+16/03/25 04:15:22 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000002_62: Committed
+16/03/25 04:15:22 INFO Executor: Finished task 2.0 in stage 2.0 (TID 62). 2080 bytes result sent to driver
+16/03/25 04:15:22 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 63, localhost, partition 3,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:22 INFO Executor: Running task 3.0 in stage 2.0 (TID 63)
+16/03/25 04:15:22 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 62) in 860 ms on localhost (3/30)
+16/03/25 04:15:22 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:22 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:23 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000003_63' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000003
+16/03/25 04:15:23 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000003_63: Committed
+16/03/25 04:15:23 INFO Executor: Finished task 3.0 in stage 2.0 (TID 63). 2080 bytes result sent to driver
+16/03/25 04:15:23 INFO TaskSetManager: Starting task 4.0 in stage 2.0 (TID 64, localhost, partition 4,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:23 INFO Executor: Running task 4.0 in stage 2.0 (TID 64)
+16/03/25 04:15:23 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 63) in 1404 ms on localhost (4/30)
+16/03/25 04:15:23 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:25 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000004_64' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000004
+16/03/25 04:15:25 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000004_64: Committed
+16/03/25 04:15:25 INFO Executor: Finished task 4.0 in stage 2.0 (TID 64). 2080 bytes result sent to driver
+16/03/25 04:15:25 INFO TaskSetManager: Starting task 5.0 in stage 2.0 (TID 65, localhost, partition 5,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:25 INFO Executor: Running task 5.0 in stage 2.0 (TID 65)
+16/03/25 04:15:25 INFO TaskSetManager: Finished task 4.0 in stage 2.0 (TID 64) in 1217 ms on localhost (5/30)
+16/03/25 04:15:25 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:26 INFO BlockManagerInfo: Removed broadcast_2_piece0 on localhost:35289 in memory (size: 3.1 KB, free: 511.5 MB)
+16/03/25 04:15:26 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:35289 in memory (size: 2.3 KB, free: 511.5 MB)
+16/03/25 04:15:26 INFO ContextCleaner: Cleaned accumulator 1
+16/03/25 04:15:26 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000005_65' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000005
+16/03/25 04:15:26 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000005_65: Committed
+16/03/25 04:15:26 INFO Executor: Finished task 5.0 in stage 2.0 (TID 65). 2080 bytes result sent to driver
+16/03/25 04:15:26 INFO TaskSetManager: Starting task 6.0 in stage 2.0 (TID 66, localhost, partition 6,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:26 INFO Executor: Running task 6.0 in stage 2.0 (TID 66)
+16/03/25 04:15:26 INFO TaskSetManager: Finished task 5.0 in stage 2.0 (TID 65) in 1540 ms on localhost (6/30)
+16/03/25 04:15:26 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:26 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/03/25 04:15:27 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000006_66' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000006
+16/03/25 04:15:27 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000006_66: Committed
+16/03/25 04:15:27 INFO Executor: Finished task 6.0 in stage 2.0 (TID 66). 2080 bytes result sent to driver
+16/03/25 04:15:27 INFO TaskSetManager: Starting task 7.0 in stage 2.0 (TID 67, localhost, partition 7,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:27 INFO Executor: Running task 7.0 in stage 2.0 (TID 67)
+16/03/25 04:15:27 INFO TaskSetManager: Finished task 6.0 in stage 2.0 (TID 66) in 1201 ms on localhost (7/30)
+16/03/25 04:15:27 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:27 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:29 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000007_67' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000007
+16/03/25 04:15:29 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000007_67: Committed
+16/03/25 04:15:29 INFO Executor: Finished task 7.0 in stage 2.0 (TID 67). 2080 bytes result sent to driver
+16/03/25 04:15:29 INFO TaskSetManager: Starting task 8.0 in stage 2.0 (TID 68, localhost, partition 8,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:29 INFO Executor: Running task 8.0 in stage 2.0 (TID 68)
+16/03/25 04:15:29 INFO TaskSetManager: Finished task 7.0 in stage 2.0 (TID 67) in 1237 ms on localhost (8/30)
+16/03/25 04:15:29 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:30 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000008_68' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000008
+16/03/25 04:15:30 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000008_68: Committed
+16/03/25 04:15:30 INFO Executor: Finished task 8.0 in stage 2.0 (TID 68). 2080 bytes result sent to driver
+16/03/25 04:15:30 INFO TaskSetManager: Starting task 9.0 in stage 2.0 (TID 69, localhost, partition 9,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:30 INFO Executor: Running task 9.0 in stage 2.0 (TID 69)
+16/03/25 04:15:30 INFO TaskSetManager: Finished task 8.0 in stage 2.0 (TID 68) in 1204 ms on localhost (9/30)
+16/03/25 04:15:30 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:31 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000009_69' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000009
+16/03/25 04:15:31 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000009_69: Committed
+16/03/25 04:15:31 INFO Executor: Finished task 9.0 in stage 2.0 (TID 69). 2080 bytes result sent to driver
+16/03/25 04:15:31 INFO TaskSetManager: Starting task 10.0 in stage 2.0 (TID 70, localhost, partition 10,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:31 INFO Executor: Running task 10.0 in stage 2.0 (TID 70)
+16/03/25 04:15:31 INFO TaskSetManager: Finished task 9.0 in stage 2.0 (TID 69) in 1014 ms on localhost (10/30)
+16/03/25 04:15:31 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:31 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/03/25 04:15:32 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000010_70' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000010
+16/03/25 04:15:32 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000010_70: Committed
+16/03/25 04:15:32 INFO Executor: Finished task 10.0 in stage 2.0 (TID 70). 2080 bytes result sent to driver
+16/03/25 04:15:32 INFO TaskSetManager: Starting task 11.0 in stage 2.0 (TID 71, localhost, partition 11,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:32 INFO Executor: Running task 11.0 in stage 2.0 (TID 71)
+16/03/25 04:15:32 INFO TaskSetManager: Finished task 10.0 in stage 2.0 (TID 70) in 920 ms on localhost (11/30)
+16/03/25 04:15:32 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:33 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000011_71' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000011
+16/03/25 04:15:33 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000011_71: Committed
+16/03/25 04:15:33 INFO Executor: Finished task 11.0 in stage 2.0 (TID 71). 2080 bytes result sent to driver
+16/03/25 04:15:33 INFO TaskSetManager: Starting task 12.0 in stage 2.0 (TID 72, localhost, partition 12,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:33 INFO TaskSetManager: Finished task 11.0 in stage 2.0 (TID 71) in 1741 ms on localhost (12/30)
+16/03/25 04:15:33 INFO Executor: Running task 12.0 in stage 2.0 (TID 72)
+16/03/25 04:15:33 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:33 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:34 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000012_72' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000012
+16/03/25 04:15:34 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000012_72: Committed
+16/03/25 04:15:34 INFO Executor: Finished task 12.0 in stage 2.0 (TID 72). 2080 bytes result sent to driver
+16/03/25 04:15:34 INFO TaskSetManager: Starting task 13.0 in stage 2.0 (TID 73, localhost, partition 13,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:34 INFO Executor: Running task 13.0 in stage 2.0 (TID 73)
+16/03/25 04:15:34 INFO TaskSetManager: Finished task 12.0 in stage 2.0 (TID 72) in 961 ms on localhost (13/30)
+16/03/25 04:15:34 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:34 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:35 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000013_73' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000013
+16/03/25 04:15:35 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000013_73: Committed
+16/03/25 04:15:35 INFO Executor: Finished task 13.0 in stage 2.0 (TID 73). 2080 bytes result sent to driver
+16/03/25 04:15:35 INFO TaskSetManager: Starting task 14.0 in stage 2.0 (TID 74, localhost, partition 14,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:35 INFO Executor: Running task 14.0 in stage 2.0 (TID 74)
+16/03/25 04:15:35 INFO TaskSetManager: Finished task 13.0 in stage 2.0 (TID 73) in 1111 ms on localhost (14/30)
+16/03/25 04:15:35 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/03/25 04:15:36 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000014_74' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000014
+16/03/25 04:15:36 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000014_74: Committed
+16/03/25 04:15:36 INFO Executor: Finished task 14.0 in stage 2.0 (TID 74). 2080 bytes result sent to driver
+16/03/25 04:15:36 INFO TaskSetManager: Starting task 15.0 in stage 2.0 (TID 75, localhost, partition 15,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:36 INFO Executor: Running task 15.0 in stage 2.0 (TID 75)
+16/03/25 04:15:36 INFO TaskSetManager: Finished task 14.0 in stage 2.0 (TID 74) in 861 ms on localhost (15/30)
+16/03/25 04:15:36 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:37 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000015_75' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000015
+16/03/25 04:15:37 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000015_75: Committed
+16/03/25 04:15:37 INFO Executor: Finished task 15.0 in stage 2.0 (TID 75). 2080 bytes result sent to driver
+16/03/25 04:15:37 INFO TaskSetManager: Starting task 16.0 in stage 2.0 (TID 76, localhost, partition 16,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:37 INFO Executor: Running task 16.0 in stage 2.0 (TID 76)
+16/03/25 04:15:37 INFO TaskSetManager: Finished task 15.0 in stage 2.0 (TID 75) in 974 ms on localhost (16/30)
+16/03/25 04:15:37 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:39 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000016_76' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000016
+16/03/25 04:15:39 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000016_76: Committed
+16/03/25 04:15:39 INFO Executor: Finished task 16.0 in stage 2.0 (TID 76). 2080 bytes result sent to driver
+16/03/25 04:15:39 INFO TaskSetManager: Starting task 17.0 in stage 2.0 (TID 77, localhost, partition 17,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:39 INFO Executor: Running task 17.0 in stage 2.0 (TID 77)
+16/03/25 04:15:39 INFO TaskSetManager: Finished task 16.0 in stage 2.0 (TID 76) in 1741 ms on localhost (17/30)
+16/03/25 04:15:39 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:41 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000017_77' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000017
+16/03/25 04:15:41 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000017_77: Committed
+16/03/25 04:15:41 INFO Executor: Finished task 17.0 in stage 2.0 (TID 77). 2080 bytes result sent to driver
+16/03/25 04:15:41 INFO TaskSetManager: Starting task 18.0 in stage 2.0 (TID 78, localhost, partition 18,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:41 INFO Executor: Running task 18.0 in stage 2.0 (TID 78)
+16/03/25 04:15:41 INFO TaskSetManager: Finished task 17.0 in stage 2.0 (TID 77) in 1542 ms on localhost (18/30)
+16/03/25 04:15:41 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:41 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:42 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000018_78' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000018
+16/03/25 04:15:42 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000018_78: Committed
+16/03/25 04:15:42 INFO Executor: Finished task 18.0 in stage 2.0 (TID 78). 2080 bytes result sent to driver
+16/03/25 04:15:42 INFO TaskSetManager: Starting task 19.0 in stage 2.0 (TID 79, localhost, partition 19,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:42 INFO Executor: Running task 19.0 in stage 2.0 (TID 79)
+16/03/25 04:15:42 INFO TaskSetManager: Finished task 18.0 in stage 2.0 (TID 78) in 1209 ms on localhost (19/30)
+16/03/25 04:15:42 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:43 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000019_79' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000019
+16/03/25 04:15:43 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000019_79: Committed
+16/03/25 04:15:43 INFO Executor: Finished task 19.0 in stage 2.0 (TID 79). 2080 bytes result sent to driver
+16/03/25 04:15:43 INFO TaskSetManager: Starting task 20.0 in stage 2.0 (TID 80, localhost, partition 20,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:43 INFO TaskSetManager: Finished task 19.0 in stage 2.0 (TID 79) in 1257 ms on localhost (20/30)
+16/03/25 04:15:43 INFO Executor: Running task 20.0 in stage 2.0 (TID 80)
+16/03/25 04:15:43 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:43 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:45 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000020_80' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000020
+16/03/25 04:15:45 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000020_80: Committed
+16/03/25 04:15:45 INFO Executor: Finished task 20.0 in stage 2.0 (TID 80). 2080 bytes result sent to driver
+16/03/25 04:15:45 INFO TaskSetManager: Starting task 21.0 in stage 2.0 (TID 81, localhost, partition 21,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:45 INFO Executor: Running task 21.0 in stage 2.0 (TID 81)
+16/03/25 04:15:45 INFO TaskSetManager: Finished task 20.0 in stage 2.0 (TID 80) in 1598 ms on localhost (21/30)
+16/03/25 04:15:45 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/03/25 04:15:46 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000021_81' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000021
+16/03/25 04:15:46 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000021_81: Committed
+16/03/25 04:15:46 INFO Executor: Finished task 21.0 in stage 2.0 (TID 81). 2080 bytes result sent to driver
+16/03/25 04:15:46 INFO TaskSetManager: Starting task 22.0 in stage 2.0 (TID 82, localhost, partition 22,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:46 INFO Executor: Running task 22.0 in stage 2.0 (TID 82)
+16/03/25 04:15:46 INFO TaskSetManager: Finished task 21.0 in stage 2.0 (TID 81) in 1276 ms on localhost (22/30)
+16/03/25 04:15:46 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:47 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000022_82' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000022
+16/03/25 04:15:47 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000022_82: Committed
+16/03/25 04:15:47 INFO Executor: Finished task 22.0 in stage 2.0 (TID 82). 2080 bytes result sent to driver
+16/03/25 04:15:47 INFO TaskSetManager: Starting task 23.0 in stage 2.0 (TID 83, localhost, partition 23,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:47 INFO Executor: Running task 23.0 in stage 2.0 (TID 83)
+16/03/25 04:15:47 INFO TaskSetManager: Finished task 22.0 in stage 2.0 (TID 82) in 1330 ms on localhost (23/30)
+16/03/25 04:15:47 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:48 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000023_83' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000023
+16/03/25 04:15:48 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000023_83: Committed
+16/03/25 04:15:48 INFO Executor: Finished task 23.0 in stage 2.0 (TID 83). 2080 bytes result sent to driver
+16/03/25 04:15:48 INFO TaskSetManager: Starting task 24.0 in stage 2.0 (TID 84, localhost, partition 24,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:48 INFO Executor: Running task 24.0 in stage 2.0 (TID 84)
+16/03/25 04:15:48 INFO TaskSetManager: Finished task 23.0 in stage 2.0 (TID 83) in 1246 ms on localhost (24/30)
+16/03/25 04:15:48 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:48 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:50 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000024_84' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000024
+16/03/25 04:15:50 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000024_84: Committed
+16/03/25 04:15:50 INFO Executor: Finished task 24.0 in stage 2.0 (TID 84). 2080 bytes result sent to driver
+16/03/25 04:15:50 INFO TaskSetManager: Starting task 25.0 in stage 2.0 (TID 85, localhost, partition 25,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:50 INFO Executor: Running task 25.0 in stage 2.0 (TID 85)
+16/03/25 04:15:50 INFO TaskSetManager: Finished task 24.0 in stage 2.0 (TID 84) in 1074 ms on localhost (25/30)
+16/03/25 04:15:50 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:50 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:51 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000025_85' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000025
+16/03/25 04:15:51 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000025_85: Committed
+16/03/25 04:15:51 INFO Executor: Finished task 25.0 in stage 2.0 (TID 85). 2080 bytes result sent to driver
+16/03/25 04:15:51 INFO TaskSetManager: Starting task 26.0 in stage 2.0 (TID 86, localhost, partition 26,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:51 INFO Executor: Running task 26.0 in stage 2.0 (TID 86)
+16/03/25 04:15:51 INFO TaskSetManager: Finished task 25.0 in stage 2.0 (TID 85) in 1573 ms on localhost (26/30)
+16/03/25 04:15:51 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:51 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/03/25 04:15:52 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000026_86' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000026
+16/03/25 04:15:52 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000026_86: Committed
+16/03/25 04:15:52 INFO Executor: Finished task 26.0 in stage 2.0 (TID 86). 2080 bytes result sent to driver
+16/03/25 04:15:52 INFO TaskSetManager: Starting task 27.0 in stage 2.0 (TID 87, localhost, partition 27,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:52 INFO Executor: Running task 27.0 in stage 2.0 (TID 87)
+16/03/25 04:15:52 INFO TaskSetManager: Finished task 26.0 in stage 2.0 (TID 86) in 1020 ms on localhost (27/30)
+16/03/25 04:15:52 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:52 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:53 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000027_87' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000027
+16/03/25 04:15:53 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000027_87: Committed
+16/03/25 04:15:53 INFO Executor: Finished task 27.0 in stage 2.0 (TID 87). 2080 bytes result sent to driver
+16/03/25 04:15:53 INFO TaskSetManager: Starting task 28.0 in stage 2.0 (TID 88, localhost, partition 28,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:53 INFO Executor: Running task 28.0 in stage 2.0 (TID 88)
+16/03/25 04:15:53 INFO TaskSetManager: Finished task 27.0 in stage 2.0 (TID 87) in 1172 ms on localhost (28/30)
+16/03/25 04:15:53 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:53 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:54 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000028_88' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000028
+16/03/25 04:15:54 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000028_88: Committed
+16/03/25 04:15:54 INFO Executor: Finished task 28.0 in stage 2.0 (TID 88). 2080 bytes result sent to driver
+16/03/25 04:15:54 INFO TaskSetManager: Starting task 29.0 in stage 2.0 (TID 89, localhost, partition 29,NODE_LOCAL, 1965 bytes)
+16/03/25 04:15:54 INFO Executor: Running task 29.0 in stage 2.0 (TID 89)
+16/03/25 04:15:54 INFO TaskSetManager: Finished task 28.0 in stage 2.0 (TID 88) in 1007 ms on localhost (29/30)
+16/03/25 04:15:54 INFO ShuffleBlockFetcherIterator: Getting 30 non-empty blocks out of 30 blocks
+16/03/25 04:15:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/03/25 04:15:55 INFO FileOutputCommitter: Saved output of task 'attempt_201603250414_0002_m_000029_89' to file:/home/ec2-user/Workspace/spark_sorted/_temporary/0/task_201603250414_0002_m_000029
+16/03/25 04:15:55 INFO SparkHadoopMapRedUtil: attempt_201603250414_0002_m_000029_89: Committed
+16/03/25 04:15:55 INFO Executor: Finished task 29.0 in stage 2.0 (TID 89). 2080 bytes result sent to driver
+16/03/25 04:15:55 INFO TaskSetManager: Finished task 29.0 in stage 2.0 (TID 89) in 1082 ms on localhost (30/30)
+16/03/25 04:15:55 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+16/03/25 04:15:55 INFO DAGScheduler: ResultStage 2 (saveAsTextFile at Spark_Sort.java:53) finished in 37.316 s
+16/03/25 04:15:55 INFO DAGScheduler: Job 1 finished: saveAsTextFile at Spark_Sort.java:53, took 59.618343 s
+16/03/25 04:15:55 INFO SparkContext: Invoking stop() from shutdown hook
+16/03/25 04:15:56 INFO SparkUI: Stopped Spark web UI at http://172.31.34.248:4040
+16/03/25 04:15:56 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/03/25 04:15:56 INFO MemoryStore: MemoryStore cleared
+16/03/25 04:15:56 INFO BlockManager: BlockManager stopped
+16/03/25 04:15:56 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/03/25 04:15:56 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/03/25 04:15:56 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/03/25 04:15:56 INFO SparkContext: Successfully stopped SparkContext
+16/03/25 04:15:56 INFO ShutdownHookManager: Shutdown hook called
+16/03/25 04:15:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-c78f9781-fa2c-4c63-ba47-a4c0d2dc8d19
+16/03/25 04:15:56 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/03/25 04:15:56 INFO ShutdownHookManager: Deleting directory /tmp/spark-c78f9781-fa2c-4c63-ba47-a4c0d2dc8d19/httpd-5463cf0a-465d-4602-99fd-e75286c839e1

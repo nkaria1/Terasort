@@ -1,0 +1,72 @@
+wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
+wget http://www-us.apache.org/dist/spark/spark-1.6.0/spark-1.6.0.tgz
+wget http://apache.cs.utah.edu/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+
+cd /etc
+sudo vim bashrc
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk.x86_64
+export PATH=$JAVA_HOME/bin:$PATH
+export HADOOP_INSTALL=/usr/local/hadoop
+export HADOOP_HOME=$HADOOP_INSTALL
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export HADOOP_CONF_DIR=$HADOOP_INSTALL/etc/hadoop/
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
+export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+
+
+ssh-keygen -t dsa -P "" -f ~/.ssh/id_dsa 
+cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys 
+
+sudo mkfs -t ext4 /dev/xvdb
+sudo mkdir -p /mnt/raid
+sudo mount /dev/xvdb  /mnt/raid
+cd /mnt/raid
+sudo mkdir /mnt/raid/spark 
+sudo mkdir /mnt/raid/hadoop
+sudo chown -R ec2-user:ec2-user /mnt/raid/spark
+sudo chown -R ec2-user:ec2-user /mnt/raid/hadoop
+
+
+
+////////////////////core-site.xml ///////////////////
+
+<name>hadoop.tmp.dir</name>
+<value> $HADOOP_HOME/tmp</value> 
+<name>fs.defaultFS </name>
+<value> hdfs://HOSTNAME:PORT </value>
+
+////////////////////yarn-site.xml ///////////////////
+ 
+<name>fs.defaultFS </name>
+<value> hdfs://HOSTNAME:PORT </value>
+
+
+/////////////  ocde compile  /////////////
+hadoop com.sun.tools.javac.Main Hadoop_Sort.java 
+jar cf sort.jar Hadoop_Sort*.class
+
+///////////////////spark-env.sh////////////////////
+SPARK_MASTER_IP=LOCAL_IP
+
+
+////////////////////////////16 node//////////////////
+eval `ssh-agent -s`
+chmod 600 login_key.pem 
+ssh-add login_key.pem
+
+///////////////////spark-env.sh////////////////////
+SPARK_LOCAL_DIRS=/mnt/raid/spark
+SPARK_EXECUTOR_CORES=1
+export SPARK_EXECUTOR_MEMORY=1G
+SPARK_MASTER_IP=LOCAL_IP
+SPARK_WORKER_CORES=2
+SPARK_WORKER_MEMORY=1g
+SPARK_WORKER_INSTANCES=4
+
+
