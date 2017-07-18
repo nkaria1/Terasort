@@ -51,7 +51,6 @@ public class Spark_Sort {
 
 		//JavaPairRDD<String, String> record_kv = k10.mapToPair(new mapper_kv());
 
-		//Operations on record RDD
 		rec.sortByKey(true).saveAsTextFile("/Spark_sorted");
 		
 	}//end of main method
