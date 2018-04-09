@@ -13,5 +13,5 @@ This folder contains the first 10 lines and last 10 lines of the sorted output f
 4. Log folder:
 This contains the runtime logs for hadoop and spark
 
-5. Report.doc:
+5. Report.docx:
 This is the final report which contains the steps for environment setup of hadoop and spark. This contains the ovservations and conclusions.
